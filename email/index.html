@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>Document</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: space-evenly;
+      }
+      .button {
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Email Api</h1>
+    <form method="post">
+      <label for="username">senders email</label>
+      <input type="email" id="username" />
+      <label for="username">senders password</label>
+      <input type="password" id="password" />
+      <label for="username">receivers email</label>
+      <input type="email" id="recEmail" />
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" />
+      <label for="emailbody">Body</label>
+      <input type="text" id="emailBody" />
+      <input
+        type="button"
+        value="Send Email"
+        onclick="sendEmail()"
+        class="button"
+      />
+    </form>
+  </body>
+  <script src="index.js"></script>
+</html>
