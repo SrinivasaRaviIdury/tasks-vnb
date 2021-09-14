@@ -39,7 +39,9 @@ router.post('/submit-form', (req, res) => {
   } catch (error) {
     console.log(error);
   }
-  app.listen(3000);
+  
   //...
   res.end();
 });
+app.listen(3000);
+console.log('listening at 3000');
