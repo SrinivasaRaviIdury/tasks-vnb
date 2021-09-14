@@ -4,33 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Store Data</title>
+    <title>Upload Files</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1>Upload data to store Local Storage</h1>
-      <input type="file" id="take_input" />
-      <img id="imgPreview" src="" alt="Preview" />
+      <h1>Upload Files To Server API</h1>
+      <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" />
+        <input type="submit" value="Upload" />
+      </form>
     </div>
-    <script>
-      document
-        .getElementById('take_input')
-        .addEventListener('change', function () {
-          const reader = new FileReader();
-          reader.addEventListener('load', () => {
-            console.log(reader.result);
-            localStorage.setItem('recent-image', reader.result);
-          });
-          reader.readAsDataURL(this.files[0]);
-        });
-      document.addEventListener('DOMContentLoaded', function () {
-        const recentItemUrl = localStorage.getItem('recent-item');
-        if (recentItemUrl) {
-          document
-            .getElementById('imgPreview')
-            .setAttribute('src', recentItemUrl);
-        }
-      });
-    </script>
   </body>
 </html>
